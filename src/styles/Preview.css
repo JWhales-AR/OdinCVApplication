@@ -1,2 +1,41 @@
 #preview {
+    --fg-preview-main: #505060;
+    --fg-preview-emphasis: #202020;
+    --fg-preview-sub: #656580;
+    min-height: 842px;
+}
+
+.preview-header {
+    color: var(--fg-preview-main);
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.preview-header-name {
+    font-weight: 800;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.preview-header-contacts-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.preview-header-contact {
+    colow: var(--fg-preview-sub);
+    font-size: 0.8rem;
+}
+
+.preview-header-contact a:link {
+    color: var(--fg-preview-emphasis);
+}
+
+.preview-header-contact:not(:last-child)::after {
+    opacity: 0.3;
+    content: "●";
+    font-size: 0.4rem;
+    margin: 0 0.5rem;
 }
