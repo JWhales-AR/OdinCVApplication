@@ -39,7 +39,7 @@ button {
 }
 
 .editor-preview-column {
-    padding: 1.5rem;
+    padding: 3rem;
     box-shadow: 0 4pt 5pt var(--fg-header-alter),
                 0 -1pt 2pt var(--fg-header-alter);
 }

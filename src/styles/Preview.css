@@ -2,7 +2,11 @@
     --fg-preview-main: #505060;
     --fg-preview-emphasis: #202020;
     --fg-preview-sub: #656580;
+    --bg-hr: #656590;
     min-height: 842px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .preview-header {
@@ -38,4 +42,23 @@
     content: "●";
     font-size: 0.4rem;
     margin: 0 0.5rem;
+}
+
+.preview-sections-container {
+    flex-grow: 1;
+}
+
+.cv-section {
+    color: var(--fg-preview-main);
+}
+
+.cv-section:not(:last-of-type) {
+    margin-bottom: 2rem;
+}
+
+.cv-section hr {
+    border: none;
+    height: 2px;
+    opacity: 0.5;
+    background-color: var(--bg-hr);
 }

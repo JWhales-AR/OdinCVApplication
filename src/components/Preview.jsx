@@ -13,12 +13,25 @@ function PreviewHeaderContact({name, phone, mail, location}) {
   );
 }
 
+function CVSection({header, items}) {
+  return (
+    <div className="cv-section">
+      <p>{header}</p>
+      <hr />
+    </div>
+  );
+}
+
 export default function Preview() {
   return (
-    <aside id="preview" className="editor-preview-column">
+    <section id="preview" className="editor-preview-column">
       <PreviewHeaderContact name="Langston Smith" phone="xxx-xxx-xxxx"
                             mail="chrome.strikehawks@babylonia.org"
                             location="Babylonia, Space"/>
-    </aside>
+      <div className="preview-sections-container">
+        <CVSection header="PROFESSIONAL EXPERIENCE" />
+        <CVSection header="EDUCATION" />
+      </div>
+    </section>
   );
 }
