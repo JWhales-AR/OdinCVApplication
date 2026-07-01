@@ -14,8 +14,36 @@ button {
     appearance: none;
 }
 
+:root {
+    --bg-header: #334155;
+    --fg-header: #ffffff;
+    --fg-header-alter: #94a3b8;
+}
+
+body {
+    height: 100vh;
+}
+
 #root {
     max-width: 80rem;
     padding: 1rem;
     margin: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.editor-preview-wrapper {
+    padding: 0.1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    flex-grow: 1;
+    gap: 0.3rem;
+}
+
+.editor-preview-column {
+    padding: 1.5rem;
+    box-shadow: 0 4pt 5pt var(--fg-header-alter),
+                0 -1pt 2pt var(--fg-header-alter);
 }

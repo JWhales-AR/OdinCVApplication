@@ -1,7 +1,4 @@
 header {
-    --bg-header: #334155;
-    --fg-header: #ffffff;
-    --fg-header-alter: #94a3b8;
     background-color: var(--bg-header);
     color: var(--fg-header);
     padding: 2rem;
