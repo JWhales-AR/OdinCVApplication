@@ -62,3 +62,35 @@
     opacity: 0.5;
     background-color: var(--bg-hr);
 }
+
+.cv-section-item-container {
+    list-style: none;
+}
+
+.cv-section-item {
+    margin: 1.5rem 1rem;
+    display: flex;
+}
+
+.cv-section-item-time-span {
+    font-size: 0.8rem;
+    width: 8rem;
+    flex-shrink: 0;
+}
+
+.cv-section-item-header {
+    color: var(--fg-preview-emphasis);
+    margin-bottom: 0.2rem;
+    font-weight: 600;
+}
+
+.cv-section-item-subheader {
+    font-style: italic;
+    font-size: 0.85rem;
+    margin-bottom: 0.6rem;
+}
+
+.cv-section-item-description {
+    white-space: pre-line;
+    font-size: 0.9rem;
+}
