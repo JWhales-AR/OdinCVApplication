@@ -3,6 +3,11 @@
 CVApplication, as part of The Odin Project's React Course
 
 
+## Resource Attributions
+
+- [Favicon](https://www.flaticon.com/free-icons/curriculum-vitae)
+
+
 ## React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
