@@ -1,0 +1,18 @@
+header {
+    --bg-header: #334155;
+    --fg-header: #ffffff;
+    --fg-header-alter: #94a3b8;
+    background-color: var(--bg-header);
+    color: var(--fg-header);
+    padding: 2rem;
+    box-shadow: 0 4pt 5pt var(--fg-header-alter);
+}
+
+.header-title p:first-child {
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.header-title p:nth-child(2) {
+    color: var(--fg-header-alter);
+}

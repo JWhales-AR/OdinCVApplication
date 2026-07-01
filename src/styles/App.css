@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="mail"],
+input[type="url"],
+input[type="password"],
+textarea,
+button {
+    appearance: none;
+}
+
+#root {
+    max-width: 80rem;
+    padding: 1rem;
+    margin: auto;
+}
