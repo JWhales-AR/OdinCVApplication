@@ -1,2 +1,50 @@
 #editor {
 }
+
+.editor-column {
+    margin: auto;
+    max-width: 50ch;
+    padding: 2rem;
+    border-radius: 8pt;
+    box-shadow: 1pt 1pt 10pt -2pt gray;
+}
+
+.editor-column-header {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--bg-header);
+    margin-bottom: 0.5rem;
+}
+
+.editor-personal-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.editor-input {
+    border: 1pt solid var(--fg-header-alter);
+    padding: 0.5rem 1rem;
+    border-radius: 4pt;
+    outline: none;
+    box-shadow: 1pt 1pt 10pt -4pt var(--fg-header-alter);
+    color: var(--bg-header);
+}
+
+.editor-input:focus {
+    border-color: var(--bg-header);
+}
+
+.editor-input-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.editor-input-wrapper label {
+    font-size: 0.8rem;
+    color: var(--fg-header-alter);
+}
+
+.editor-input-wrapper label:has(+ .editor-input:focus) {
+    color: var(--bg-header);
+}
