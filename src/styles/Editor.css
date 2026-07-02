@@ -9,17 +9,15 @@
     box-shadow: 1pt 1pt 10pt -2pt gray;
 }
 
+.editor-column:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
 .editor-column-header {
     font-weight: 700;
     font-size: 1.2rem;
     color: var(--bg-header);
     margin-bottom: 0.5rem;
-}
-
-.editor-personal-details {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
 }
 
 .editor-input {
@@ -47,4 +45,11 @@
 
 .editor-input-wrapper label:has(+ .editor-input:focus) {
     color: var(--bg-header);
+}
+
+.editor-column-fieldset {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
