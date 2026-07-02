@@ -29,10 +29,28 @@ function EditorPersonalDetails() {
   );
 }
 
+function EditorProfessionalExperience() {
+  return (
+    <form id="editor-professional-experience" className="editor-column">
+      <p className="editor-column-header">Professional Experience</p>
+    </form>
+  );
+}
+
+function EditorEducation() {
+  return (
+    <form id="editor-education" className="editor-column">
+      <p className="editor-column-header">Education</p>
+    </form>
+  );
+}
+
 export default function Editor() {
   return (
     <section id="editor" className="editor-preview-column">
       <EditorPersonalDetails />
+      <EditorProfessionalExperience />
+      <EditorEducation />
     </section>
   );
 }
