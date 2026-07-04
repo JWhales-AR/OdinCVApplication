@@ -1,4 +1,5 @@
 #editor {
+    overflow-y: scroll;
 }
 
 .editor-column {
@@ -29,6 +30,19 @@
     color: var(--bg-header);
 }
 
+textarea.editor-input {
+    resize: vertical;
+}
+
+.editor-date-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.editor-date-wrapper input {
+    max-width: 22ch;
+}
+
 .editor-input:focus {
     border-color: var(--bg-header);
 }
@@ -41,6 +55,7 @@
 .editor-input-wrapper label {
     font-size: 0.8rem;
     color: var(--fg-header-alter);
+    margin-bottom: 0.3rem;
 }
 
 .editor-input-wrapper label:has(+ .editor-input:focus) {
@@ -52,4 +67,9 @@
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+}
+
+.editor-column-fieldset-title {
+    font-size: 0.9rem;
+    color: var(--bg-header);
 }

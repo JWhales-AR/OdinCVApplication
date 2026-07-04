@@ -2,7 +2,9 @@ function EditorInput({name, id, labelText, inputType="text"}) {
   return (
       <div className="editor-input-wrapper">
         <label htmlFor={id}>{labelText}</label>
-        <input className="editor-input" name={name} id={id} type={inputType} />
+        {inputType === "textarea"?
+         <textarea className="editor-input" name={name} id={id}/>
+         : <input className="editor-input" name={name} id={id} type={inputType} />}
       </div>
   );
 }
@@ -33,6 +35,16 @@ function EditorProfessionalExperience() {
   return (
     <form id="editor-professional-experience" className="editor-column">
       <p className="editor-column-header">Professional Experience</p>
+      <EditorFieldSet>
+        <p className="editor-column-fieldset-title">Many Task Force Teams</p>
+        <EditorInput key="pe-company-name" name="pe_company_name" id="pe-company-name" labelText="Company Name" />
+        <div className="editor-date-wrapper">
+          <EditorInput key="pe-work-date-start" name="pe_work_date_start" id="pe-work-date-start" labelText="Start Year" />
+          <EditorInput key="pe-work-date-end" name="pe_work_date_end" id="pe-work-date-end" labelText="End Year" />
+        </div>
+        <EditorInput key="pe-job-title" name="pe_job_title" id="pe-job-title" labelText="Job Title" />
+        <EditorInput key="pe-description" name="pe_description" id="pe-description" labelText="Description" inputType="textarea" />
+      </EditorFieldSet>
     </form>
   );
 }
