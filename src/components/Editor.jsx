@@ -53,6 +53,15 @@ function EditorEducation() {
   return (
     <form id="editor-education" className="editor-column">
       <p className="editor-column-header">Education</p>
+      <EditorFieldSet>
+        <p className="editor-column-fieldset-title">F.O.S. College</p>
+        <EditorInput key="e-school-name" name="e_company_name" id="e-company-name" labelText="School Name" />
+        <div className="editor-date-wrapper">
+          <EditorInput key="e-date-start" name="e_date_start" id="e-date-start" labelText="Start Year" />
+          <EditorInput key="e-date-end" name="e_date_end" id="e-date-end" labelText="End Year" />
+        </div>
+        <EditorInput key="e-comments" name="e_comments" id="e-comments" labelText="Graduation Comments" />
+      </EditorFieldSet>
     </form>
   );
 }
