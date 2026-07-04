@@ -9,10 +9,13 @@ function EditorInput({name, id, labelText, inputType="text"}) {
   );
 }
 
-function EditorFieldSet({children}) {
+function EditorFieldSet({summary, children}) {
   return (
     <fieldset className="editor-column-fieldset">
-      {children}
+      <details className="editor-column-fieldset-details">
+        <summary>{summary}</summary>
+        {children}
+      </details>
     </fieldset>
   );
 }
@@ -35,8 +38,7 @@ function EditorProfessionalExperience() {
   return (
     <form id="editor-professional-experience" className="editor-column">
       <p className="editor-column-header">Professional Experience</p>
-      <EditorFieldSet>
-        <p className="editor-column-fieldset-title">Many Task Force Teams</p>
+      <EditorFieldSet summary="Many Task Force Teams">
         <EditorInput key="pe-company-name" name="pe_company_name" id="pe-company-name" labelText="Company Name" />
         <div className="editor-date-wrapper">
           <EditorInput key="pe-work-date-start" name="pe_work_date_start" id="pe-work-date-start" labelText="Start Year" />
@@ -53,8 +55,7 @@ function EditorEducation() {
   return (
     <form id="editor-education" className="editor-column">
       <p className="editor-column-header">Education</p>
-      <EditorFieldSet>
-        <p className="editor-column-fieldset-title">F.O.S. College</p>
+      <EditorFieldSet summary="F.O.S. College">
         <EditorInput key="e-school-name" name="e_company_name" id="e-company-name" labelText="School Name" />
         <div className="editor-date-wrapper">
           <EditorInput key="e-date-start" name="e_date_start" id="e-date-start" labelText="Start Year" />
