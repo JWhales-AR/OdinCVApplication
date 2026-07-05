@@ -69,10 +69,15 @@ textarea.editor-input {
     gap: 0.5rem;
 }
 
+.editor-column-fieldset-details[open]:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
 .editor-column-fieldset-details summary {
     font-size: 0.9rem;
     color: var(--bg-header);
 }
+
 .editor-column-fieldset-details[open] summary {
     margin-bottom: 0.5rem;
 }
