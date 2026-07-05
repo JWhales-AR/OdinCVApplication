@@ -10,15 +10,18 @@ function EditorInput({name, id, labelText, inputType="text"}) {
 }
 
 function EditorFieldSet({summary, collapsable=true, children}) {
-  return (
+  let fieldSetMain = (
     <fieldset className="editor-column-fieldset">
-      {collapsable?
-       <details className="editor-column-fieldset-details">
-         <summary>{summary}</summary>
-         {children}
-       </details>
-       : children}
+      {children}
     </fieldset>
+  );
+  return (
+    collapsable?
+      <details className="editor-column-fieldset-details">
+        <summary>{summary}</summary>
+        {fieldSetMain}
+      </details>
+    : fieldSetMain
   );
 }
 
