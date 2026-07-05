@@ -9,13 +9,15 @@ function EditorInput({name, id, labelText, inputType="text"}) {
   );
 }
 
-function EditorFieldSet({summary, children}) {
+function EditorFieldSet({summary, collapsable=true, children}) {
   return (
     <fieldset className="editor-column-fieldset">
-      <details className="editor-column-fieldset-details">
-        <summary>{summary}</summary>
-        {children}
-      </details>
+      {collapsable?
+       <details className="editor-column-fieldset-details">
+         <summary>{summary}</summary>
+         {children}
+       </details>
+       : children}
     </fieldset>
   );
 }
@@ -24,7 +26,7 @@ function EditorPersonalDetails() {
   return (
     <form id="editor-personal-details" className="editor-column">
       <p className="editor-column-header">Personal Details</p>
-      <EditorFieldSet>
+      <EditorFieldSet collapsable={false}>
         <EditorInput key="person-name" name="person_name" id="person-name" labelText="Full Name" />
         <EditorInput key="person-phone" name="person_phone" id="person-phone" labelText="Phone Number" />
         <EditorInput key="person-mail" name="person_mail" id="person-mail" labelText="Email" inputType="mail" />
