@@ -1,10 +1,10 @@
-function EditorInput({name, id, labelText, inputType="text"}) {
+function EditorInput({name, id, labelText, value, updateValue, inputType="text"}) {
   return (
       <div className="editor-input-wrapper">
         <label htmlFor={id}>{labelText}</label>
         {inputType === "textarea"?
-         <textarea className="editor-input" name={name} id={id}/>
-         : <input className="editor-input" name={name} id={id} type={inputType} />}
+         <textarea className="editor-input" name={name} id={id} value={value} onChange={updateValue} />
+         : <input className="editor-input" name={name} id={id} value={value} onChange={updateValue} type={inputType} />}
       </div>
   );
 }
@@ -25,15 +25,35 @@ function EditorFieldSet({summary, collapsable=true, children}) {
   );
 }
 
-function EditorPersonalDetails() {
+function EditorPersonalDetails({details, setDetails}) {
   return (
     <form id="editor-personal-details" className="editor-column">
       <p className="editor-column-header">Personal Details</p>
       <EditorFieldSet collapsable={false}>
-        <EditorInput key="person-name" name="person_name" id="person-name" labelText="Full Name" />
-        <EditorInput key="person-phone" name="person_phone" id="person-phone" labelText="Phone Number" />
-        <EditorInput key="person-mail" name="person_mail" id="person-mail" labelText="Email" inputType="mail" />
-        <EditorInput key="person-loaction" name="person_location" id="person-location" labelText="Location" />
+        <EditorInput
+          key="person-name" name="person_name" id="person-name" labelText="Full Name"
+          value={details.fullName} updateValue={event =>
+            setDetails({...details, fullName: event.target.value})
+          }
+        />
+        <EditorInput
+          key="person-phone" name="person_phone" id="person-phone" labelText="Phone Number"
+          value={details.phoneNumber} updateValue={event =>
+            setDetails({...details, phoneNumber: event.target.value})
+          }
+        />
+        <EditorInput
+          key="person-mail" name="person_mail" id="person-mail" labelText="Email" inputType="mail"
+          value={details.eMail} updateValue={event =>
+            setDetails({...details, eMail: event.target.value})
+          }
+        />
+        <EditorInput
+          key="person-loaction" name="person_location" id="person-location" labelText="Location"
+          value={details.location} updateValue={event =>
+            setDetails({...details, location: event.target.value})
+          }
+        />
       </EditorFieldSet>
     </form>
   );
@@ -84,10 +104,11 @@ function EditorEducation() {
   );
 }
 
-export default function Editor() {
+export default function Editor({personalDetailsState}) {
+  let [personalDetails, setPersonalDetails] = personalDetailsState;
   return (
     <section id="editor" className="editor-preview-column">
-      <EditorPersonalDetails />
+      <EditorPersonalDetails details={personalDetails} setDetails={setPersonalDetails} />
       <EditorProfessionalExperience />
       <EditorEducation />
     </section>

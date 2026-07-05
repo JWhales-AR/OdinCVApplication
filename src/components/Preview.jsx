@@ -41,7 +41,9 @@ function CVSection({header, items}) {
   );
 }
 
-export default function Preview() {
+export default function Preview({personalDetails}) {
+
+  let {fullName, phoneNumber, eMail, location} = personalDetails;
 
   let professionalExperience = [
     {
@@ -83,9 +85,9 @@ export default function Preview() {
 
   return (
     <section id="preview" className="editor-preview-column">
-      <PreviewHeaderContact name="Langston Smith (Chrome)" phone="xxx-xxx-xxxx"
-                            mail="chrome.strikehawks@babylonia.org"
-                            location="Babylonia, Space"/>
+      <PreviewHeaderContact name={fullName} phone={phoneNumber}
+                            mail={eMail}
+                            location={location} />
       <div className="preview-sections-container">
         <CVSection header="PROFESSIONAL EXPERIENCE"
                    items={professionalExperience} />
