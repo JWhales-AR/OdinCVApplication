@@ -59,6 +59,13 @@ function EditorPersonalDetails({details, setDetails}) {
   );
 }
 
+function editListProperty(list, itemId, property, newValue) {
+  return list.map(
+    item => item.id === itemId ?
+      {...item, [property]: newValue} : item
+  );
+}
+
 function EditorProfessionalExperience({experiences, setExperiences}) {
   return (
     <form id="editor-professional-experience" className="editor-column">
@@ -67,55 +74,35 @@ function EditorProfessionalExperience({experiences, setExperiences}) {
         <EditorFieldSet key={id} summary={header}>
           <EditorInput
             key="pe-company-name" name="pe_company_name" id={`pe-company-name-${id}`} labelText="Company Name"
-            value={header} updateValue={event => {
-              setExperiences(
-                experiences.map(
-                  job => job.id === id ?
-                    {...job, header: event.target.value} : job
-                ));
-            }}
+            value={header} updateValue={event => setExperiences(
+              editListProperty(experiences, id, "header", event.target.value)
+            )}
           />
           <div className="editor-date-wrapper">
             <EditorInput
               key="pe-work-date-start" name="pe_work_date_start" id={`pe-work-date-start-${id}`} labelText="Start Year"
-              value={start} updateValue={event => {
-                setExperiences(
-                  experiences.map(
-                    job => job.id === id ?
-                      {...job, start: event.target.value} : job
-                  ));
-              }}
+              value={start} updateValue={event => setExperiences(
+                editListProperty(experiences, id, "start", event.target.value)
+              )}
             />
             <EditorInput
               key="pe-work-date-end" name="pe_work_date_end" id={`pe-work-date-end-${id}`} labelText="End Year"
-              value={end} updateValue={event => {
-                setExperiences(
-                  experiences.map(
-                    job => job.id === id ?
-                      {...job, end: event.target.value} : job
-                  ));
-              }}
+              value={end} updateValue={event => setExperiences(
+                editListProperty(experiences, id, "end", event.target.value)
+              )}
             />
           </div>
           <EditorInput
             key="pe-job-title" name="pe_job_title" id={`pe-job-title-${id}`} labelText="Job Title"
-            value={subheader} updateValue={event => {
-              setExperiences(
-                experiences.map(
-                  job => job.id === id ?
-                    {...job, subheader: event.target.value} : job
-                ));
-            }}
+            value={subheader} updateValue={event => setExperiences(
+              editListProperty(experiences, id, "subheader", event.target.value)
+            )}
           />
           <EditorInput
             key="pe-description" name="pe_description" id={`pe-description-${id}`} labelText="Description" inputType="textarea"
-            value={description} updateValue={event => {
-              setExperiences(
-                experiences.map(
-                  job => job.id === id ?
-                    {...job, description: event.target.value} : job
-                ));
-            }}
+            value={description} updateValue={event => setExperiences(
+              editListProperty(experiences, id, "description", event.target.value)
+            )}
           />
         </EditorFieldSet>
       )}
@@ -131,45 +118,29 @@ function EditorEducation({education, setEducation}) {
         <EditorFieldSet key={id} summary={header}>
           <EditorInput
             key="e-school-name" name="e_company_name" id={`e-company-name-${id}`} labelText="School Name"
-            value={header} updateValue={event => {
-              setEducation(
-                education.map(
-                  job => job.id === id ?
-                    {...job, header: event.target.value} : job
-                ));
-            }}
+            value={header} updateValue={event => setEducation(
+              editListProperty(education, id, "header", event.target.value)
+            )}
           />
           <div className="editor-date-wrapper">
             <EditorInput
               key="e-date-start" name="e_date_start" id={`e-date-start-${id}`} labelText="Start Year"
-              value={start} updateValue={event => {
-                setEducation(
-                  education.map(
-                    job => job.id === id ?
-                      {...job, start: event.target.value} : job
-                  ));
-              }}
+              value={start} updateValue={event => setEducation(
+                editListProperty(education, id, "start", event.target.value)
+              )}
             />
             <EditorInput
               key="e-date-end" name="e_date_end" id={`e-date-end-${id}`} labelText="End Year"
-              value={end} updateValue={event => {
-                setEducation(
-                  education.map(
-                    job => job.id === id ?
-                      {...job, end: event.target.value} : job
-                  ));
-              }}
+              value={end} updateValue={event => setEducation(
+                editListProperty(education, id, "end", event.target.value)
+              )}
             />
           </div>
           <EditorInput
             key="e-comments" name="e_comments" id={`e-comments-${id}`} labelText="Graduation Comments"
-            value={subheader} updateValue={event => {
-              setEducation(
-                education.map(
-                  job => job.id === id ?
-                    {...job, subheader: event.target.value} : job
-                ));
-            }}
+            value={subheader} updateValue={event => setEducation(
+              editListProperty(education, id, "subheader", event.target.value)
+            )}
           />
         </EditorFieldSet>
       )}
