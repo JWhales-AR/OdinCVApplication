@@ -9,18 +9,18 @@ function EditorInput({name, id, labelText, value, updateValue, inputType="text"}
   );
 }
 
-function EditorDateSpanInput({namePrefix, idPrefix, idUnique, state, setState}) {
+function EditorDateSpanInput({prefix, idUnique, state, setState}) {
   let {start, end} = state;
   return (
     <div className="editor-date-wrapper">
       <EditorInput
-        key={`${idPrefix}-date-start`} name={`${namePrefix}_date_start`}
-        id={`${idPrefix}-date-start-${idUnique}`} labelText="Start Year"
+        key={`${prefix}-date-start`} name={`${prefix}_date_start`}
+        id={`${prefix}-date-start-${idUnique}`} labelText="Start Year"
         value={start} updateValue={event => setState("start", event.target.value)}
       />
       <EditorInput
-        key={`${idPrefix}-date-end`} name={`${namePrefix}_date_end`}
-        id={`${idPrefix}-date-end-${idUnique}`} labelText="End Year"
+        key={`${prefix}-date-end`} name={`${prefix}_date_end`}
+        id={`${prefix}-date-end-${idUnique}`} labelText="End Year"
         value={end} updateValue={event => setState("end", event.target.value)}
       />
     </div>
@@ -97,7 +97,7 @@ function EditorProfessionalExperience({experiences, setExperiences}) {
             )}
           />
           <EditorDateSpanInput
-            namePrefix="pe-work" idPrefix="pe_work" idUnique={id} state={{start, end}}
+            prefix="experience" idUnique={id} state={{start, end}}
             setState={(property, newValue) => setExperiences(
               editListProperty(experiences, id, property, newValue)
             )}
@@ -133,7 +133,7 @@ function EditorEducation({education, setEducation}) {
             )}
           />
           <EditorDateSpanInput
-            namePrefix="e" idPrefix="e" idUnique={id} state={{start, end}}
+            prefix="education" idUnique={id} state={{start, end}}
             setState={(property, newValue) => setEducation(
               editListProperty(education, id, property, newValue)
             )}
