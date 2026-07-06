@@ -24,9 +24,7 @@ export default function App() {
       end: "2024",
       header: "Many Task Force Teams",
       subheader: "Commandant & Captain",
-      description: [
-        "Led teams of construct soldiers to their death; unwillingly, of course.",
-      ],
+      description: "Led teams of construct soldiers to their death; unwillingly, of course.",
     },
     {
       id: 2,
@@ -34,11 +32,8 @@ export default function App() {
       end: "Present",
       header: "Strike Hawks",
       subheader: "Commandant & Captain",
-      description: [
-        "Led a team of elite constructs.\n",
-        "Aided the Gray Ravens on multiple occassions.\n",
-        "Widely celebrated as the best team in terms of solo mission completion rate.",
-      ],
+      description: "Led a team of elite constructs. Aided the Gray Ravens on multiple occassions.\n"
+        + "Widely celebrated as the best team in terms of solo mission completion rate."
     },
   ]);
 
