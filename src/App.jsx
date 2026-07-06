@@ -19,22 +19,22 @@ export default function App() {
 
   let [professionalExperience, setProfessionalExperience] = useState([
     {
-      "id": 1,
-      "start": "???",
-      "end": "2024",
-      "header": "Many Task Force Teams",
-      "subheader": "Commandant & Captain",
-      "description": [
+      id: 1,
+      start: "???",
+      end: "2024",
+      header: "Many Task Force Teams",
+      subheader: "Commandant & Captain",
+      description: [
         "Led teams of construct soldiers to their death; unwillingly, of course.",
       ],
     },
     {
-      "id": 2,
-      "start": "2024",
-      "end": "Present",
-      "header": "Strike Hawks",
-      "subheader": "Commandant & Captain",
-      "description": [
+      id: 2,
+      start: "2024",
+      end: "Present",
+      header: "Strike Hawks",
+      subheader: "Commandant & Captain",
+      description: [
         "Led a team of elite constructs.\n",
         "Aided the Gray Ravens on multiple occassions.\n",
         "Widely celebrated as the best team in terms of solo mission completion rate.",
@@ -44,18 +44,18 @@ export default function App() {
 
   let [education, setEducation] = useState([
     {
-      "id": 1,
-      "start": "2018",
-      "end": "2022",
-      "header": "F.O.S. College",
-      "subheader": "Graduated as Chief Commandant"
+      id: 1,
+      start: "2018",
+      end: "2022",
+      header: "F.O.S. College",
+      subheader: "Graduated as Chief Commandant"
     },
     {
-      "id": 2,
-      "start": "???",
-      "end": "2018",
-      "header": "Tutored under John Smith",
-      "subheader": "Successor to the Smith Name"
+      id: 2,
+      start: "???",
+      end: "2018",
+      header: "Tutored under John Smith",
+      subheader: "Successor to the Smith Name"
     },
   ]);
 
