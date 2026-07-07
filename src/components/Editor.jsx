@@ -1,4 +1,12 @@
+const DEFAULT_ITEM = {
+  start: "???",
+  end: "???",
+  subheader: " ",
+  description: " ",
+};
+
 import BinIcon from "../assets/bin.svg?react";
+import AddIcon from "../assets/add.svg?react";
 
 function EditorInput({name, id, labelText, value, updateValue, inputType="text"}) {
   return (
@@ -31,8 +39,18 @@ function EditorDateSpanInput({prefix, idUnique, state, setState}) {
 
 function EditorDeleteButton({deleteAction}) {
   return (
-    <button className="editor-button" type="button" onClick={deleteAction}>
-      <BinIcon className="editor-button-svg" />
+    <button className="editor-button editor-delete-button" type="button"
+            onClick={deleteAction}>
+      <BinIcon className="editor-button-svg hover-activated" />
+    </button>
+  );
+}
+
+function EditorAddButton({addAction}) {
+  return (
+    <button className="editor-button editor-add-button" type="button"
+            onClick={addAction}>
+      <AddIcon className="editor-button-svg" />
     </button>
   );
 }
@@ -102,7 +120,12 @@ function editListProperty(list, itemId, property, newValue) {
 function EditorProfessionalExperience({experiences, setExperiences}) {
   return (
     <form id="editor-professional-experience" className="editor-column">
-      <p className="editor-column-header">Professional Experience</p>
+      <div className="editor-column-header">
+        <p>Professional Experience</p>
+        <EditorAddButton addAction={() =>
+          setExperiences([...experiences, {id: crypto.randomUUID(), header: "New Experience", ...DEFAULT_ITEM}])
+        } />
+      </div>
       {experiences.map(({id, start, end, header, subheader, description}) =>
         <EditorFieldSet key={id} summary={header} deleteAction={() =>
           setExperiences(experiences.filter(item => item.id !== id))
@@ -140,7 +163,12 @@ function EditorProfessionalExperience({experiences, setExperiences}) {
 function EditorEducation({education, setEducation}) {
   return (
     <form id="editor-education" className="editor-column">
-      <p className="editor-column-header">Education</p>
+      <div className="editor-column-header">
+        <p>Education</p>
+        <EditorAddButton addAction={() =>
+          setEducation([...education, {id: crypto.randomUUID(), header: "New Education", ...DEFAULT_ITEM}])
+        } />
+      </div>
       {education.map(({id, start, end, header, subheader}) =>
         <EditorFieldSet key={id} summary={header} deleteAction={() =>
           setEducation(education.filter(item => item.id !== id))

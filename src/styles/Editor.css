@@ -20,6 +20,9 @@
     font-size: 1.2rem;
     color: var(--bg-header);
     margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .editor-input {
@@ -100,13 +103,20 @@ textarea.editor-input {
 
 .editor-button-svg {
     fill: var(--fg-header-alter);
+}
+
+.editor-button-svg.hover-activated {
     visibility: hidden;
 }
 
-.editor-column-fieldset-details summary:hover .editor-button-svg {
+.editor-column-fieldset-details summary:hover .hover-activated {
     visibility: visible;
 }
 
-.editor-button-svg:hover {
+.editor-delete-button .editor-button-svg:hover {
     fill: var(--bg-delete-button-hover);
+}
+
+.editor-add-button .editor-button-svg:hover {
+    fill: var(--bg-header);
 }

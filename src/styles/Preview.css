@@ -1,4 +1,5 @@
 #preview {
+    overflow-y: scroll;
     --fg-preview-main: #505060;
     --fg-preview-emphasis: #202020;
     --fg-preview-sub: #656580;
