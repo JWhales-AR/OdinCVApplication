@@ -1,5 +1,6 @@
 #editor {
     overflow-y: scroll;
+    --bg-delete-button-hover: orangered;
 }
 
 .editor-column {
@@ -80,4 +81,32 @@ textarea.editor-input {
 
 .editor-column-fieldset-details[open] summary {
     margin-bottom: 0.5rem;
+}
+
+.editor-details-summary-bin-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.editor-button {
+    background-color: inherit;
+    width: 1.2rem;
+    height: 1.2rem;
+    border: none;
+    display: flex;
+    align-items: center;
+}
+
+.editor-button-svg {
+    fill: var(--fg-header-alter);
+    visibility: hidden;
+}
+
+.editor-column-fieldset-details summary:hover .editor-button-svg {
+    visibility: visible;
+}
+
+.editor-button-svg:hover {
+    fill: var(--bg-delete-button-hover);
 }

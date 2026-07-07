@@ -1,3 +1,5 @@
+import BinIcon from "../assets/bin.svg?react";
+
 function EditorInput({name, id, labelText, value, updateValue, inputType="text"}) {
   return (
       <div className="editor-input-wrapper">
@@ -27,7 +29,15 @@ function EditorDateSpanInput({prefix, idUnique, state, setState}) {
   );
 }
 
-function EditorFieldSet({summary, collapsable=true, children}) {
+function EditorDeleteButton({deleteAction}) {
+  return (
+    <button className="editor-button" type="button" onClick={deleteAction}>
+      <BinIcon className="editor-button-svg" />
+    </button>
+  );
+}
+
+function EditorFieldSet({summary, collapsable=true, deleteAction, children}) {
   let fieldSetMain = (
     <fieldset className="editor-column-fieldset">
       {children}
@@ -36,7 +46,12 @@ function EditorFieldSet({summary, collapsable=true, children}) {
   return (
     collapsable?
       <details className="editor-column-fieldset-details">
-        <summary>{summary}</summary>
+        <summary>
+          <div className="editor-details-summary-bin-wrapper">
+            {summary}
+            <EditorDeleteButton deleteAction={deleteAction} />
+          </div>
+        </summary>
         {fieldSetMain}
       </details>
     : fieldSetMain
@@ -89,7 +104,9 @@ function EditorProfessionalExperience({experiences, setExperiences}) {
     <form id="editor-professional-experience" className="editor-column">
       <p className="editor-column-header">Professional Experience</p>
       {experiences.map(({id, start, end, header, subheader, description}) =>
-        <EditorFieldSet key={id} summary={header}>
+        <EditorFieldSet key={id} summary={header} deleteAction={() =>
+          setExperiences(experiences.filter(item => item.id !== id))
+        }>
           <EditorInput
             key="pe-company-name" name="pe_company_name" id={`pe-company-name-${id}`} labelText="Company Name"
             value={header} updateValue={event => setExperiences(
@@ -125,7 +142,9 @@ function EditorEducation({education, setEducation}) {
     <form id="editor-education" className="editor-column">
       <p className="editor-column-header">Education</p>
       {education.map(({id, start, end, header, subheader}) =>
-        <EditorFieldSet key={id} summary={header}>
+        <EditorFieldSet key={id} summary={header} deleteAction={() =>
+          setEducation(education.filter(item => item.id !== id))
+        }>
           <EditorInput
             key="e-school-name" name="e_company_name" id={`e-company-name-${id}`} labelText="School Name"
             value={header} updateValue={event => setEducation(
