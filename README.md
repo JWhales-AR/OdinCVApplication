@@ -6,6 +6,8 @@ CVApplication, as part of The Odin Project's React Course
 ## Resource Attributions
 
 - [Favicon](https://www.flaticon.com/free-icons/curriculum-vitae)
+- [Add Button Icon](https://fonts.google.com/icons?selected=Material+Symbols+Outlined:add_box:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=add&icon.size=24&icon.color=%23e3e3e3)
+- [Bin Button Icon](https://fonts.google.com/icons?selected=Material+Symbols+Outlined:delete_forever:FILL@0;wght@400;GRAD@0;opsz@24&icon.query=bin&icon.size=24&icon.color=%23e3e3e3)
 
 
 ## React + Vite
